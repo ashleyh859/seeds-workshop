@@ -17,9 +17,10 @@ export function Post(props: Props) {
         aspectRatio={1}
         source={{ uri: String(post.data().imageUrl) }}
       />
-      <XStack p={10} gap={10}>
+      <XStack p={10} paddingBottom={0} gap={10}>
         <Button
           chromeless
+          p={2.5}
           onPress={() => {
             Alert.alert('Hello');
           }}
@@ -28,6 +29,7 @@ export function Post(props: Props) {
         </Button>
         <Button
           chromeless
+          p={2.5}
           onPress={() => {
             router.navigate('/new-comment');
           }}
@@ -35,7 +37,9 @@ export function Post(props: Props) {
           <MessageSquare />
         </Button>
       </XStack>
-      <Paragraph p={10}>{post.data().caption}</Paragraph>
+      <Paragraph p={10} marginLeft={5} paddingTop={0}>
+        {post.data().caption}
+      </Paragraph>
     </YStack>
   );
 }
